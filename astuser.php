@@ -24,8 +24,8 @@ $rs = mysql_query($strSQL);
 // Извлекаем значения и формируем таблицу результатов
 while($id=mysql_fetch_row($rs))
         {
-	$clid=explode('-',$id[1]);
-	if($clid[0] != end($clid)){$pref=$clid[0];} else {$pref='';}
+//	$clid=explode('-',$id[1]);
+//	if($clid[0] != end($clid)){$pref=$clid[0];} else {$pref='';}
 //print
         echo 
 //	"<tr>".
