@@ -1,4 +1,5 @@
 <?php
+
 include 'auth.php'; // Извлечение логина и пароля к MYSQL $login, $password
 include 'extstat.php';
 //include 'translit.php'; # Функция latrus()
@@ -21,16 +22,17 @@ $rs = mysql_query($strSQL);
 //echo "<table border='1' >";
 //echo "<tr><th>Номер<th>Префикс<th>Имя<th>Состояние<th>Действие</td>";
 
+$echo ='';
 // Извлекаем значения и формируем таблицу результатов
 while($id=mysql_fetch_row($rs))
         {
 //	$clid=explode('-',$id[1]);
 //	if($clid[0] != end($clid)){$pref=$clid[0];} else {$pref='';}
 //print
-        echo 
+//        echo 
 //	"<tr>".
 //	"<td>"
-$id[0].';'.$id[1]."\n";
+$echo .= $pref.$id[0].';'.$city.';'.$id[1]."\n";
 
 //	"<td>".$pref.
 //	"<td title=\"".$id[1]."\">".latrus(end($clid)).
@@ -39,4 +41,5 @@ $id[0].';'.$id[1]."\n";
         }
 //echo "</table>";
 
+file_put_contents($dir.$file, $echo);
 ?>

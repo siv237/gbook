@@ -39,4 +39,3 @@ return $str;
 
 //echo ExtStatus(101);
 ?>
-
