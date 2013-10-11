@@ -13,7 +13,9 @@ include 'astuser.php';
 exec("cd /var/lib/aststat/jde/");
 $conn_id = ftp_connect("$ftpaddress","21","100");
 ftp_login($conn_id, $ftplogin, $ftppass);
-ftp_put($conn_id, 'EIC.csv', $file, FTP_BINARY);
+
+$csv = fopen($dir.$file, 'r');
+ftp_fput($conn_id, $file, $csv, FTP_BINARY);
 $buff = ftp_rawlist($conn_id, '/');
 $contents = ftp_nlist($conn_id, ".");
 //exec("cd /var/lib/aststat/jde/tmp/");
